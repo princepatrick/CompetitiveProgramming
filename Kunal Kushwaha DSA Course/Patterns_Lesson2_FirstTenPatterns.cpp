@@ -168,6 +168,35 @@ void pattern11( int n ){
 
 }
 
+void pattern12( int n ){
+
+    for( int i=0 ; i<2*n ; i++ ){
+        for( int j=0 ; j<2*n-1 ; j++ ){
+            if( i<n ){
+                if( j >= i && j <= 2*n-1-i ){
+                    if( (n%2 != 0 && i%2==j%2) || ( n%2 == 0 && i%2 != j%2 ) )
+                        std::cout<<"*";
+                    else
+                        std::cout<<" ";
+                } else {
+                    std::cout<<" ";
+                }
+            } else {
+                if( j >= 2*n-1-i && j <= i-1 ){
+                    if( (n%2 != 0 && i%2!=j%2) || ( n%2 == 0 && i%2 == j%2 ) )
+                        std::cout<<"*";
+                    else
+                        std::cout<<" ";
+                } else {
+                    std::cout<<" ";
+                }
+            }
+        }
+        std::cout<<std::endl;
+    }
+
+}
+
 int main(){
     int n;
     std::cout<<"Enter the size for which you want the pattern to be printed"<<std::endl;
@@ -205,5 +234,8 @@ int main(){
 
     std::cout<<"Pattern 11"<<std::endl;
     pattern11(n);
+
+    std::cout<<"Pattern 12"<<std::endl;
+    pattern12(n);
 
 }

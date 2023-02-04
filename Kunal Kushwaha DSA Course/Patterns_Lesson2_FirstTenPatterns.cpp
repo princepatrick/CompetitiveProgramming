@@ -67,6 +67,42 @@ void pattern5( int n ){
 
 }
 
+void pattern6( int n ){
+
+    for( int i=0 ; i<n ; i++ ){
+        int ind = n-1-i;
+        while( ind > 0 ){
+            std::cout<<" ";
+            ind--;
+            continue;
+        }
+
+        ind = i+1;
+
+        while( ind>0 ){
+            std::cout<<"*";
+            ind--;
+        }
+        
+        std::cout<<std::endl;
+    }
+
+}
+
+void pattern7(int n){
+
+    for( int i=0 ; i<n ; i++ ){
+        for( int j=0 ; j<n; j++ ){
+            if( j >= i ){
+                std::cout<<"*";
+            } else {
+                std::cout<<" ";
+            }
+        }
+        std::cout<<std::endl;
+    }
+}
+
 int main(){
     int n;
     std::cout<<"Enter the size for which you want the pattern to be printed"<<std::endl;
@@ -86,5 +122,11 @@ int main(){
 
     std::cout<<"Pattern 5"<<std::endl;
     pattern5(n);
+
+    std::cout<<"Pattern 6"<<std::endl;
+    pattern6(n);
+
+    std::cout<<"Pattern 7"<<std::endl;
+    pattern7(n);
 
 }

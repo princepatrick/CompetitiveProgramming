@@ -254,6 +254,34 @@ void pattern15( int n ){
 
 }
 
+void pattern16( int n ){
+
+    for( int i=0 ; i<n ; i++ ){
+        int val = 1;
+        for( int j=0 ; j<2*n-1 ; j++ ){
+            if( j>=n-1-i && j<=n-1+i ){
+                if( (n%2!=0 && i%2==j%2) || (n%2==0 && i%2!=j%2) ){
+                    std::cout<<val;
+                    
+                    if( (n%2!=0 && i%2==0) || (n%2==0 && i%2==0))
+                        j<n-1 ? val++ : val--;
+                    else if(j<n-2){
+                        val++;
+                    } else if(j>n-1){
+                        val--;
+                    } 
+                } else {
+                    std::cout<<" ";
+                }
+            } else {
+                std::cout<<" ";
+            }
+        }
+        std::cout<<std::endl;
+    }
+
+}
+
 int main(){
     int n;
     std::cout<<"Enter the size for which you want the pattern to be printed"<<std::endl;
@@ -303,5 +331,8 @@ int main(){
 
     std::cout<<"Pattern 15"<<std::endl;
     pattern15(n);
+
+    std::cout<<"Pattern 16"<<std::endl;
+    pattern16(n);
 
 }

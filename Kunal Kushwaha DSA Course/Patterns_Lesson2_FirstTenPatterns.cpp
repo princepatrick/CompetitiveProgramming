@@ -133,7 +133,7 @@ void pattern9( int n ){
 }
 
 void pattern10( int n ){
-    ///*
+    
     for( int i=0 ; i<n ; i++ ){
         for( int j=0 ; j<2*n-1 ; j++ ){
             if( j>=n-1-i && j<=n-1+i ){
@@ -147,7 +147,24 @@ void pattern10( int n ){
         }
         std::cout<<std::endl;
     }
-    //*/
+    
+}
+
+void pattern11( int n ){
+
+    for( int i=0 ; i<n ; i++ ){
+        for( int j=0 ; j<2*n-1 ; j++ ){
+            if( j>=i && j<= 2*n-1-i){
+                if( ( n%2 != 0 && j%2 == i%2 ) || ( n%2 == 0 && j%2 != i%2 ) )
+                    std::cout<<"*";
+                else
+                    std::cout<<" ";
+            }else{
+                std::cout<<" ";
+            }
+        } 
+        std::cout<<std::endl;
+    }
 
 }
 
@@ -185,5 +202,8 @@ int main(){
 
     std::cout<<"Pattern 10"<<std::endl;
     pattern10(n);
+
+    std::cout<<"Pattern 11"<<std::endl;
+    pattern11(n);
 
 }

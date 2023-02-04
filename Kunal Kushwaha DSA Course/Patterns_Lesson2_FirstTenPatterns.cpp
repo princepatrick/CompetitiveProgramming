@@ -103,6 +103,54 @@ void pattern7(int n){
     }
 }
 
+void pattern8( int n ){
+
+    for( int i=0 ; i<n ; i++ ){
+        for( int j=0 ; j<2*n-1 ; j++ ){
+            if( j >= n-1-i && j <= n-1+i ){
+                std::cout<<"*";
+            }else{
+                std::cout<<" ";
+            }
+        }
+        std::cout<<std::endl;
+    }
+
+}
+
+void pattern9( int n ){
+
+    for( int i=0 ; i<n ; i++ ){
+        for( int j=0 ; j<2*n-1 ; j++ ){
+            if( j >= i && j < 2*n-1-i ){
+                std::cout<<"*";
+            }else{
+                std::cout<<" ";
+            }
+        }
+        std::cout<<std::endl;
+    }
+}
+
+void pattern10( int n ){
+    ///*
+    for( int i=0 ; i<n ; i++ ){
+        for( int j=0 ; j<2*n-1 ; j++ ){
+            if( j>=n-1-i && j<=n-1+i ){
+                if( (n%2==1 && i%2 == j%2) || (n%2==0 && i%2 != j%2) )
+                    std::cout<<"*";
+                else
+                std::cout<<" "; 
+            } else {
+                std::cout<<" ";
+            }
+        }
+        std::cout<<std::endl;
+    }
+    //*/
+
+}
+
 int main(){
     int n;
     std::cout<<"Enter the size for which you want the pattern to be printed"<<std::endl;
@@ -128,5 +176,14 @@ int main(){
 
     std::cout<<"Pattern 7"<<std::endl;
     pattern7(n);
+
+    std::cout<<"Pattern 8"<<std::endl;
+    pattern8(n);
+
+    std::cout<<"Pattern 9"<<std::endl;
+    pattern9(n);
+
+    std::cout<<"Pattern 10"<<std::endl;
+    pattern10(n);
 
 }

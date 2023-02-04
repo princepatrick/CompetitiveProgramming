@@ -197,6 +197,63 @@ void pattern12( int n ){
 
 }
 
+void pattern13( int n ){
+
+    for( int i=0 ; i<n ; i++ ){
+        for( int j=0 ; j<2*n-1 ; j++ ){
+            if( i== n-1 ){
+                std::cout<<"*";
+            } else if( j==n-1-i || j==n-1+i ){
+                std::cout<<"*";
+            }else{
+                std::cout<<" ";
+            }
+        }
+        std::cout<<" "<<std::endl;
+    }
+
+}
+
+void pattern14( int n ){
+
+    for( int i=0 ; i<n ; i++ ){
+        for( int j=0 ; j<2*n-1 ; j++ ){
+            if( i== 0 ){
+                std::cout<<"*";
+            } else if( j==i || j==2*n-2-i ){
+                std::cout<<"*";
+            } else {
+                std::cout<<" ";
+            }
+        }
+        std::cout<<std::endl;
+    }
+
+}
+
+void pattern15( int n ){
+
+    for( int i=0 ; i<2*n-1 ; i++ ){
+        for( int j=0 ; j<2*n-1 ; j++ ){
+            if( i<n ){
+                if( j==n-1-i || j==n-1+i ){
+                    std::cout<<"*";
+                } else {
+                    std::cout<<" ";
+                }
+            } else {
+                if( j==i-n+1 || j==3*n-3-i ){
+                    std::cout<<"*";
+                }else{
+                    std::cout<<" ";
+                }
+            }
+        }
+        std::cout<<std::endl;
+    }
+
+}
+
 int main(){
     int n;
     std::cout<<"Enter the size for which you want the pattern to be printed"<<std::endl;
@@ -237,5 +294,14 @@ int main(){
 
     std::cout<<"Pattern 12"<<std::endl;
     pattern12(n);
+
+    std::cout<<"Pattern 13"<<std::endl;
+    pattern13(n);
+
+    std::cout<<"Pattern 14"<<std::endl;
+    pattern14(n);
+
+    std::cout<<"Pattern 15"<<std::endl;
+    pattern15(n);
 
 }
